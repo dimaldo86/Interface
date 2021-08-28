@@ -25,7 +25,8 @@ body {
     font-style: normal;
 }
 .container {
-    max-width:1170px;
+    max-width:1190px;
+    padding: 0 10px;
     margin: 0 auto;
 }
 
@@ -205,17 +206,15 @@ body {
     }
 }
 //partners style end
+
 //service style start
-.service {
+.service, .contacts {
     background:$secondary-color;
 }
 .service__title {
     @include font-title;
     text-align: center;
     margin-top: 60px;
-}
-.service__cards {
-    // margin-bottom: 120px;
 }
 .service__item {
     display: flex;
@@ -346,6 +345,73 @@ body {
 }
 
 //clients style end
+.contacts__block {
+    margin-top: 120px;
 
+    @media (max-width:992px) {
+        margin-bottom: 60px;
+    }
+}
+.contacts__title {
+    @include font-title;
+    margin-bottom: 50px;
+}
+.contacts__wrap {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.contacts__item {
+    width: 270px;
+    height: 150px;
+
+    background:$white-color;
+    border-radius: $borderRadius;
+
+    margin-bottom: 30px;
+    padding: 20px;
+
+    h4 {
+        display: inline-block;
+        font-family: Halvar Breitschrift;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight:bold;
+        color: $title-color;
+        
+        margin-left: 10px;
+    }
+    p {
+        margin-top: 25px;
+
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 1.5;
+        color: $text-color;
+        span {
+            display: block;
+        }
+    }
+}
+.contacts__map {
+    min-width: 570px;
+    min-height: 423px;
+
+    margin-top: 120px;
+
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius:$borderRadius;
+
+    @media (max-width:992px) {
+        margin-bottom: 60px;
+    }
+}
+//contacts style start
+
+//contacts style end
 
 /*===main style end===*/
