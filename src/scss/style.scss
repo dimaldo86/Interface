@@ -1,0 +1,351 @@
+@import "variables";
+@import "mixin";
+
+@font-face {
+    font-family: 'Halvar Breitschrift';
+    src: local('Halvar Breitschrift Bd'), local('Halvar-Breitschrift-Bd'),
+        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.woff2') format('woff2'),
+        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.woff') format('woff'),
+        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+body {
+    font-style: normal;
+}
+.container {
+    max-width:1170px;
+    margin: 0 auto;
+}
+
+ /*===header stayle start===*/
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  
+    min-height: 90px;
+    background: $bg-color;
+    border-bottom: 1px solid $header-line;
+    transition: all .6s ease; 
+}
+.fixed-top {
+    background:$header-fixed;
+}
+.container {
+    position: relative;
+}
+.navbar-brand img {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand:hover {
+    opacity: 0.75;
+    @media (min-width:960px) {
+        font-size: 16px;
+    }
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $white-color;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    &:hover {
+        color: $link-color;
+    }
+}
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+    color: $link-color;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: $link-color;
+}
+.navbar-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 190px;
+
+    border-bottom: 1px solid $white-color;
+    @media (max-width:1200px) {
+        left:20px;
+    }
+   
+}
+.navbar-search::before {
+    content: url("../img/search/search.svg");
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    background-size: 20px;
+    @media (max-width:1200px) {
+        left: -20px;
+        top: 6px;
+    }
+
+}
+.navbar-search__text {
+    margin-bottom: 0;
+    padding: 6px 10px;
+    color: $white-color;
+
+    background: transparent;
+    border: none;
+    &:focus {
+        outline: 0;
+    }
+    &::placeholder {
+        color: $white-color;
+        font-size: 16px;
+        line-height: 1.19;
+        font-weight: 400;
+    }
+}
+
+
+/*===header stayle end===*/
+
+/*===main style start===*/
+
+//about style start
+.about {
+    width: 100%;
+    height:auto;
+
+    padding: 80px 0;
+    background-color: $primary-color;
+}
+.about__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 250px;
+    min-height: 220px;
+}
+.about__desc {
+   padding: 0 25px;
+   
+}
+.about__title {
+    @include font-title;
+    margin-bottom: 20px;
+}
+.about__body {
+  display: block;
+  text-align: justify;
+}
+.about__text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: $font-w400;
+    font-size: 16px;
+    line-height: 1.3;
+   
+    color: $white-color;
+    & strong {
+        color: $link-color;
+        text-decoration: underline;
+    }
+}
+//about style end
+//partners style start
+.partners {
+    background:$white-color;
+}
+.partners__title {
+    @include font-title;
+    text-align: center;
+    margin-top: 60px;
+}
+.partners__cards {
+    margin-bottom: 120px;
+    
+    @media (max-width:992px) {
+        margin-bottom: 60px;
+    }
+}
+.partners__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.partners__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 270px;
+    min-height: 140px;
+    
+    box-shadow: $shadowCard;
+    border-radius: $borderRadius;
+    transition: all .4s ease; 
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px -9px 20px rgba(79, 78, 78, 0.15);;
+    }
+}
+//partners style end
+//service style start
+.service {
+    background:$secondary-color;
+}
+.service__title {
+    @include font-title;
+    text-align: center;
+    margin-top: 60px;
+}
+.service__cards {
+    // margin-bottom: 120px;
+}
+.service__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 120px;
+
+    @media (max-width:992px) {
+        margin-bottom: 60px;
+    }
+}
+.service__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 370px;
+    height: 417px;
+
+    background:$white-color;
+
+    box-shadow: $shadowCard;
+    border-radius: $borderRadius;
+    transition: all .4s ease; 
+    border-top: 4px solid $primary-color;
+
+    padding: 0 25px;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px -9px 20px rgba(79, 78, 78, 0.15);;
+    }
+}
+.service__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 160px;
+    height: 160px;
+
+    margin-top: 30px;
+
+    border-radius: 50%;
+
+    background:$secondary-color;
+}
+.service__text {
+    min-height: 88px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.23;
+    text-align: center;
+
+    color:$title-color;
+
+    margin: 30px 0;
+}
+.service__link {
+    padding: 16px 94px;
+    margin-bottom: 30px;
+    background:$primary-color;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.12;
+   
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color:$white-color;
+
+    border-radius: 4px;
+
+    transition: background .3s ease;
+
+    &:hover  {
+        background: $hover-link;
+        color:$white-color;
+    }
+    &:active {
+        background:$pressed-link;
+    }
+}
+//service style end
+//clients style start
+.clients {
+    background:$white-color;
+    margin-bottom: 95px
+}
+.clients__title {
+    @include font-title;
+    text-align: center;
+    margin-top: 60px;
+}
+.clients__block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center ;
+    justify-content: center;
+
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+.clients__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // max-width: 180px;
+    // height: 140px;
+
+    margin-bottom: 30px;
+
+    transition: all .3s ease-out;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+}
+
+//clients style end
+
+
+/*===main style end===*/

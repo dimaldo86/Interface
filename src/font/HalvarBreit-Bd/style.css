@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Halvar Breitschrift';
+    src: local('Halvar Breitschrift Bd'), local('Halvar-Breitschrift-Bd'),
+        url('HalvarBreit-Bd.woff2') format('woff2'),
+        url('HalvarBreit-Bd.woff') format('woff'),
+        url('HalvarBreit-Bd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

@@ -1,0 +1,13 @@
+@mixin font-title {
+    font-family: Halvar Breitschrift;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 1.18;
+    text-transform: uppercase;
+    color:$title-color;
+}
+// @mixin adaptiv ($property, $startSize, $minSize) {
+//     $addSize: $startSize - $minSize;
+//     #{$propety}: $startSize + px;
+//     #{$propety}: calc(#{$minSize + px} + #{$addSize} *((100vw - 320px) / #{$maxWidthContainer - 320px}))
+// }
