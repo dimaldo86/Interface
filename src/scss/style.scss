@@ -204,7 +204,7 @@ body {
 //partners style end
 
 //service style start
-.service, .contacts {
+.service, .contacts, .ask-form {
     background:$secondary-color;
 }
 .service__title {
@@ -341,6 +341,7 @@ body {
 }
 
 //clients style end
+//contacts style start
 .contacts {
     padding: 120px 0 80px 0;
 
@@ -416,8 +417,106 @@ body {
         height: 100%;
     }
 }
-//contacts style start
-
 //contacts style end
+//ask-form style start
+.ask-form {
+    padding-bottom: 80px;
+
+    @media (max-width:992px) {
+       padding-bottom: 40px;
+    }
+}
+.ask-form__title {
+    @include font-title;
+    margin-bottom: 50px;
+}
+.form-control {
+    font-size: 14px;
+    color: $text-color;
+    
+    &:active, &:focus  {
+        box-shadow: 1px  -1px 10px $primary-color;
+        border-color:$primary-color;
+    }
+    &:checked {
+        background: $primary-color;
+        border-color:$primary-color; 
+    }
+
+    &::placeholder {
+        font-family: Inter;
+        font-weight: normal;
+        font-size: 14px;
+        color: #A3A3A3;
+    }
+}
+input[type="text"] {
+    height: 50px;
+    margin-bottom: 15px;
+}
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius:2px;
+
+    &:active, &:focus  {
+        box-shadow:none;
+        border-color:$primary-color;
+    }
+    &:checked {
+        background: $primary-color;
+        border-color:$primary-color; 
+    }
+}
+.form-check-label {
+    font-family: Inter;
+    color: $title-color;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.check__link {
+    color: $link-color;
+    cursor: pointer;
+}
+.form__footer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 15px;
+}
+.ask-form__btn {
+    display: flex;
+    justify-content: end;
+
+    text-align: right;   
+}
+.btn {
+    width: 200px;
+    height: 48px;
+
+    padding: 0;
+
+    background: $primary-color;
+    border-radius: 4px;
+
+    color: $white-color;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &:hover  {
+        background: $hover-link;
+        color:$white-color;
+    }
+    &:active {
+        background:$pressed-link;
+    }
+
+    @media (max-width:992px) {
+        width: 80%;
+     }
+}
+
+//ask-form style end
 
 /*===main style end===*/
