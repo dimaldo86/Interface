@@ -128,9 +128,11 @@ body {
 //about style start
 .about {
     min-height:860px;
-
     padding: 80px 0;
     background-color: $primary-color;
+    @media (max-width:991px) {
+        padding: 40px 0;
+    }
 }
 .about__img {
     margin: 0 auto;
@@ -165,19 +167,16 @@ body {
 //about style end
 //partners style start
 .partners {
+    min-height: 472px;
+    padding: 120px 0;
     background:$white-color;
+    @media (max-width:991px) {
+        padding: 60px 0;
+    }
 }
 .partners__title {
     @include font-title;
     text-align: center;
-    margin-top: 60px;
-}
-.partners__cards {
-    margin-bottom: 120px;
-    
-    @media (max-width:992px) {
-        margin-bottom: 60px;
-    }
 }
 .partners__item {
     display: flex;
@@ -207,19 +206,27 @@ body {
 .service, .contacts, .ask-form {
     background:$secondary-color;
 }
+.service {
+    min-height: 748px;
+    padding: 120px 0;
+
+    @media (max-width:991px) {
+        padding: 60px 0;
+    }
+}
 .service__title {
     @include font-title;
     text-align: center;
-    margin-top: 60px;
 }
 .service__item {
     display: flex;
     align-items: center;
     justify-content: center;
+    &:last-child {
+        margin-bottom: 0;
+    }
 
-    margin-bottom: 120px;
-
-    @media (max-width:992px) {
+    @media (max-width:991px) {
         margin-bottom: 60px;
     }
 }
@@ -305,13 +312,16 @@ body {
 //service style end
 //clients style start
 .clients {
+    min-height: 660px;
+    padding: 120px 0 80px 0;
     background:$white-color;
-    margin-bottom: 95px
+    @media (max-width:991px) {
+        padding: 60px 0 40px 0;
+    }
 }
 .clients__title {
     @include font-title;
     text-align: center;
-    margin-top: 60px;
 }
 .clients__block {
     display: flex;
@@ -343,9 +353,10 @@ body {
 //clients style end
 //contacts style start
 .contacts {
+    min-height: 623px;
     padding: 120px 0 80px 0;
 
-    @media (max-width:992px) {
+    @media (max-width:991px) {
         padding: 60px 0 40px 0;
     }
 
@@ -420,9 +431,10 @@ body {
 //contacts style end
 //ask-form style start
 .ask-form {
+    min-height: 430px;
     padding-bottom: 80px;
 
-    @media (max-width:992px) {
+    @media (max-width:991px) {
        padding-bottom: 40px;
     }
 }
@@ -531,11 +543,6 @@ input[type="text"] {
     &:focus {
         box-shadow:none;
     }
-
-    // @media (max-width:991px) {
-    //     width: 80%;
-    //  }
-
      @media (max-width:767px) {
         width: 100%;
      }
