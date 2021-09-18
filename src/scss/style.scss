@@ -462,7 +462,10 @@ body {
         color: #A3A3A3;
     }
 }
-input[type="text"] {
+textarea.form-control {
+    resize: none;
+}
+input[type="text"], input[type="tel"] {
     height: 50px;
     margin-bottom: 15px;
 }
@@ -484,6 +487,16 @@ input[type="text"] {
         width: 16px;
         height: 16px;
     }
+}
+.form-check-input.is-valid:checked, .was-validated .form-check-input:valid:checked {
+    background-color:$primary-color;
+    box-shadow:none;
+}
+.form-check-input.is-valid, .was-validated .form-check-input:valid {
+    border-color: $primary-color; 
+}
+.form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+    color: $primary-color;
 }
 .form-check-label {
     font-family: Inter;
