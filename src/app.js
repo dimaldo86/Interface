@@ -91,3 +91,4 @@ const mask = (selector) => {
     });
 };
 mask('input[type="tel"]');
+
