@@ -92,3 +92,22 @@ const mask = (selector) => {
 };
 mask('input[type="tel"]');
 
+// remove active link
+
+const showActive = () => {
+
+    const navLink = document.querySelectorAll('.nav-link');
+    
+    navLink.forEach(link  => {
+        link.addEventListener('click', () => {
+            for (var i = 0; i < navLink.length; i++) {
+              if (navLink[i] != this)
+                navLink[i].classList.remove("active");
+            }
+            link.classList.toggle("active");
+          });
+    });
+}
+
+showActive();
+
