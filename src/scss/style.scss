@@ -1,200 +1,7 @@
-@import "_variables";
-@import "_mixins";
-
-@font-face {
-    font-family: 'Halvar Breitschrift';
-    src: local('Halvar Breitschrift Bd'), local('Halvar-Breitschrift-Bd'),
-        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.woff2') format('woff2'),
-        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.woff') format('woff'),
-        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-html {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
-*,
-*:after,
-*:before {
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit;
-}
-body {
-    font-style: normal;
-}
-.container {
-    max-width:1190px;
-    padding: 0 10px;
-    margin: 0 auto;
-}
-
- /*===header stayle start===*/
-.navbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  
-    min-height: 90px;
-    background: $bg-color;
-    border-bottom: 1px solid $header-line;
-    transition: all .6s ease; 
-    @media (max-width:991px) {
-        position: fixed;
-        width: 100%;
-        align-items: flex-start;
-        padding: 20px 30px 0 30px;
-        z-index: 5000;
-        background: rgba(104, 180, 216, 0.7);
-       
-        &-collapse {
-            padding: 30px 0;
-        }
-    }
-
-    @media (max-width:575px) {
-        padding: 10px 10px 0 10px;
-    }
-}
-.fixed-top {
-    background:$header-fixed;
-}
-.container {
-    position: relative;
-}
-.navbar-brand {
-    display: flex;
-    align-items: center;
-
-    width: 176px;
-    height: 25px;
-
-    @media (max-width:991px) {
-        width: 150px;
-    }
-
-    img {
-        width: 100%;
-    } 
-
-    &:hover {
-        opacity: 0.75;
-    }
-}
-.navbar-nav {
-    margin: 0 0 0 60px;
-
-    @media (max-width:1200px) {
-        margin: 0 0 0 20px;
-    }
-
-    @media (max-width:991px) {
-        margin: 0;
-    }
-}
-.nav-item {
-    @media (max-width:991px) {
-        padding: 20px 0;
-    }
-}
-.active {
-    color: $link-color;
-}
-.navbar-light .navbar-nav .nav-link {
-    font-family: Inter;
-    color: $white-color;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-
-    &:hover {
-        color: $link-color;
-    }
-
-    @media (max-width:991px) {
-        font-size: 18px;
-    }
-
-   
-}
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .show > .nav-link {
-    color:$link-color;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-    color: $link-color;
-}
-.navbar-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    width: 190px;
-
-    border-bottom: 1px solid $white-color;
-    input[type=text] {
-        width: 100%;
-        height: 36px;
-        margin-bottom: 0;
-
-        @media (max-width:991px) {
-           height: 65px;
-        }
-       
-    }
-    @media (max-width:991px) {
-        width: 250px;
-        left:32px;
-    }
-   
-}
-.navbar-search::before {
-    content: url("../img/search/search.svg");
-    position: absolute;
-    left: -30px;
-    top: 9px;
-    background-size: 20px;
-
-    @media (max-width:991px) {
-       top: 22px;
-    }
-
-}
-.navbar-search__text {
-    margin-bottom: 0;
-    padding-bottom: 6px;
-    color: $white-color;
-    font-family: Inter;
-
-    background: transparent;
-    border: none;
-    transition: border .2s linear;
-
-    &:hover {
-        box-shadow: 1px 2px 10px 3px rgb(256, 256, 256, 0.1) inset;
-        border-radius:4px;
-       
-    }
-   
-    &:focus {
-        outline: 0;
-    }
-    &::placeholder {
-        font-family: Inter;
-        color: $white-color;
-        font-size: 16px;
-        font-weight: 400;
-        @media (max-width:991px) {
-            font-size: 18px;
-        }
-    }
-}
+@import './base';
+@import './components/header';
 
 
-/*===header stayle end===*/
 
 /*===main style start===*/
 
@@ -211,7 +18,12 @@ body {
     margin: 0 auto;
 
     max-width: 550px;
-    height: 540px;
+    max-height: 540px;
+
+    @media (max-width:1200px) {
+       margin-bottom: 20px;
+    }
+
     img {
         width: 100%;
     }
@@ -235,6 +47,9 @@ body {
     & strong {
         color: $link-color;
         text-decoration: underline;
+    }
+    &:last-child {
+        margin: 0;
     }
 }
 //about style end
@@ -295,6 +110,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 417px;
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -304,13 +121,15 @@ body {
     }
 }
 .service__content {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 
     width: 370px;
-    height: 417px;
+    min-height: 417px;
 
     background:$white-color;
 
@@ -341,7 +160,7 @@ body {
     background:$secondary-color;
 }
 .service__text {
-    min-height: 88px;
+    // min-height: 88px;
     font-family: Inter;
     font-style: normal;
     font-weight: 500;
@@ -351,18 +170,22 @@ body {
 
     color:$title-color;
 
-    margin: 30px 0;
+    margin: 30px 0 0 0;
 }
 .service__link {
+    position: absolute;
+    display: block;
+    
     padding: 16px 94px;
-    margin-bottom: 30px;
+
+   
+    bottom: 30px;
     background:$primary-color;
 
     font-family: Inter;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
-    line-height: 1.12;
    
     text-align: center;
     text-transform: uppercase;
@@ -381,13 +204,18 @@ body {
     &:active {
         background:$pressed-link;
     }
+
+    @media (max-width:375px) {
+        padding: 12px 65px;
+    }
 }
 //service style end
 //clients style start
 .clients {
-    min-height: 660px;
+    min-height: 505px;
     padding: 120px 0 80px 0;
     background:$white-color;
+
     @media (max-width:991px) {
         padding: 60px 0 40px 0;
     }
@@ -402,7 +230,6 @@ body {
     align-items: center ;
     justify-content: center;
 
-    margin-bottom: 30px;
     padding: 0 10px;
 }
 .clients__item {
@@ -410,8 +237,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    // max-width: 180px;
-    // height: 140px;
+    min-height: 150px;
 
     margin-bottom: 30px;
 
@@ -420,9 +246,7 @@ body {
     &:hover {
         opacity: 0.7;
     }
-
 }
-
 //clients style end
 //contacts style start
 .contacts {

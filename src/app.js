@@ -1,5 +1,6 @@
-  // scroll header
-  window.addEventListener('scroll', () =>  {
+window.addEventListener('DOMContentLoaded', () => {
+    // scroll header
+ window.addEventListener('scroll', () =>  {
     const header = document.querySelector('.navbar'),
           windowScroll = window.pageYOffset;
 
@@ -10,6 +11,7 @@
         header.classList.remove('fixed-top');
     }   
 }) ; 
+
 
 (function () {
     'use strict'
@@ -109,5 +111,11 @@ const showActive = () => {
     });
 }
 
-showActive();
+showActive();  
+})
+
+
+
+
+
 
