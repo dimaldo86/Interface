@@ -1,0 +1,6 @@
+
+#  ignore prepros config
+prepros.config
+
+# ignore manifest json
+manifest.json

@@ -58,8 +58,9 @@
     min-height: 472px;
     padding: 120px 0;
     background:$white-color;
+
     @media (max-width:991px) {
-        padding: 60px 0;
+        padding: 60px 0 30px 0;
     }
 }
 .partners__title {
@@ -68,25 +69,34 @@
 }
 .partners__item {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.partners__img {
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 
-    min-width: 270px;
+    width: 270px;
     min-height: 140px;
-    
+
+    margin-bottom: 30px;
+    padding: 20px;
+
     box-shadow: $shadowCard;
     border-radius: $borderRadius;
-    transition: all .4s ease; 
+    transition: all .4s ease;
 
     &:hover {
         transform: translateY(-5px);
         box-shadow: 0px -9px 20px rgba(79, 78, 78, 0.15);;
     }
+
+}
+.partners__img { 
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+   img {
+       max-width:100%;
+   }
 }
 //partners style end
 
@@ -108,7 +118,7 @@
 }
 .service__item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 417px;
 
@@ -121,8 +131,6 @@
     }
 }
 .service__content {
-    position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +146,7 @@
     transition: all .4s ease; 
     border-top: 4px solid $primary-color;
 
-    padding: 0 25px;
+    padding: 30px;
 
     &:hover {
         transform: translateY(-5px);
@@ -160,7 +168,8 @@
     background:$secondary-color;
 }
 .service__text {
-    // min-height: 88px;
+    min-height: 88px;
+
     font-family: Inter;
     font-style: normal;
     font-weight: 500;
@@ -173,13 +182,11 @@
     margin: 30px 0 0 0;
 }
 .service__link {
-    position: absolute;
     display: block;
     
     padding: 16px 94px;
+    margin-top: 30px;
 
-   
-    bottom: 30px;
     background:$primary-color;
 
     font-family: Inter;
@@ -366,6 +373,11 @@
         color: #A3A3A3;
     }
 }
+.error {
+    background: #FFEFEE;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+}
 textarea.form-control {
     resize: none;
 }
@@ -464,7 +476,6 @@ input[type="text"], input[type="tel"] {
         width: 100%;
      }
 }
-
 //ask-form style end
 
 /*===main style end===*/
