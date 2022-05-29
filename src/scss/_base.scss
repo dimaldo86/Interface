@@ -4,9 +4,9 @@
 @font-face {
     font-family: 'Halvar Breitschrift';
     src: local('Halvar Breitschrift Bd'), local('Halvar-Breitschrift-Bd'),
-        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.woff2') format('woff2'),
-        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.woff') format('woff'),
-        url('/src/font/HalvarBreit-Bd/HalvarBreit-Bd.ttf') format('truetype');
+        url('../font/HalvarBreit-Bd/HalvarBreit-Bd.woff2') format('woff2'),
+        url('../font/HalvarBreit-Bd/HalvarBreit-Bd.woff') format('woff'),
+        url('../font/HalvarBreit-Bd/HalvarBreit-Bd.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
